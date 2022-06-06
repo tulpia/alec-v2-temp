@@ -1,7 +1,11 @@
 .landing {
-  margin-top: 310px;
+  padding-top: 310px;
   position: relative;
   height: calc(100vh - 310px);
+
+  .section-indicator {
+    top: 330px;
+  }
 
   @include mq_tablet {
     height: auto;
