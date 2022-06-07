@@ -5,6 +5,7 @@ header.wrapper {
   top: 65px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;
 
   @media screen and (max-width: 1400px) {
     width: calc(100vw - 80px) !important;
@@ -16,5 +17,10 @@ header.wrapper {
 
   img {
     height: 35px;
+    opacity: 0;
+  }
+
+  .time {
+    opacity: 0;
   }
 }

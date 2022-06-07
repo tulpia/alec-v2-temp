@@ -17,11 +17,44 @@ class Animations {
     );
     const sectionLandingAnimation = new SectionIndicator(sectionLanding);
 
+    // Animation du header
+    const tlHeader = gsap.timeline({ paused: true });
+    const headerLogo = document.querySelector("header img");
+    const headerTime = document.querySelector("header .time");
+
+    tlHeader.fromTo(
+      headerLogo,
+      {
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+      }
+    );
+    tlHeader.fromTo(
+      headerTime,
+      {
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+      },
+      "-=0.4"
+    );
+
     setTimeout(() => {
       title.classList.add("is-ready");
 
       setTimeout(() => {
         sectionLandingAnimation.play();
+
+        setTimeout(() => {
+          tlHeader.play();
+        }, 750);
       }, 100);
     }, 1000);
   }
