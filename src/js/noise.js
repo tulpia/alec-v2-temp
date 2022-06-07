@@ -11,14 +11,14 @@ import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import throttle from "lodash.throttle";
 
 class Noise {
-  scene = null;
-  camera = null;
-  renderer = null;
-  composer = null;
-  counter = 0.0;
-  customPass = null;
-
   constructor() {
+    this.scene = null;
+    this.camera = null;
+    this.renderer = null;
+    this.composer = null;
+    this.counter = 0.0;
+    this.customPass = null;
+
     this.three();
     this.shaders();
     this.resize();

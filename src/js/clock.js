@@ -1,6 +1,4 @@
 class Clock {
-  el = null;
-
   constructor() {
     this.el = document.querySelector(".time");
 

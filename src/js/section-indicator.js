@@ -1,9 +1,6 @@
 import { gsap } from "gsap";
 
 class SectionIndicator {
-  el = null;
-  tl = null;
-
   constructor(el) {
     this.el = el;
 

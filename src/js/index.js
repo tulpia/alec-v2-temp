@@ -4,10 +4,10 @@ import Noise from "./noise";
 import Animations from "./animations";
 
 class Home {
-  scroll = null;
-  clock = null;
-
   constructor() {
+    this.scroll = null;
+    this.clock = null;
+
     this.initScroll();
     this.initClock();
     this.initNoise();

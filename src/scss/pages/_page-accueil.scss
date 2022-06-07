@@ -156,7 +156,7 @@
         .coming-soon {
           position: absolute;
           right: 0;
-          top: 0;
+          top: 58px;
 
           @include mq_mobile {
             position: relative;
