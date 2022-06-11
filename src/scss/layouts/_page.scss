@@ -24,8 +24,8 @@ main {
   }
 
   @include mq_tablet {
-    width: calc(100vw - 60px);
-    padding-left: 30px;
+    width: calc(100vw - 105px);
+    padding-left: 45px;
   }
 
   @include mq_mobile {
@@ -62,13 +62,10 @@ section {
       transform: none;
       left: 0;
       top: -60px;
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
     }
 
     @include mq_tablet {
-      left: -65px;
+      left: -35px;
     }
 
     @include mq_mobile {
@@ -84,6 +81,13 @@ section {
       position: absolute;
       right: 0;
       top: 0;
+
+      @media screen and (max-width: 1400px) and (min-width: $bp_tablet),
+        screen and (max-width: $bp_mobile) {
+        right: auto;
+        left: 0;
+        top: 8px;
+      }
     }
 
     .text {
@@ -99,7 +103,7 @@ section {
         position: relative;
         top: auto;
         right: auto;
-        margin-left: 25px;
+        margin-left: 60px;
       }
     }
   }

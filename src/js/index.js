@@ -1,25 +1,14 @@
-import LocomotiveScroll from "locomotive-scroll";
 import Clock from "./clock";
 import Noise from "./noise";
 import Animations from "./animations";
 
 class Home {
   constructor() {
-    this.scroll = null;
     this.clock = null;
 
-    this.initScroll();
     this.initClock();
     this.initNoise();
     this.initAnimations();
-  }
-
-  initScroll() {
-    this.scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
-      smooth: true,
-      lerp: 0.05,
-    });
   }
 
   initClock() {

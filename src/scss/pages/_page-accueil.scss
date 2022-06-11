@@ -46,12 +46,22 @@
 
   .section-indicator {
     top: 330px;
+
+    @media screen and (max-width: 1400px) and (min-width: $bp_tablet),
+      screen and (max-width: $bp_mobile) {
+      top: 280px;
+    }
+
+    @include mq_tablet {
+      top: 15px;
+    }
   }
 
   @include mq_tablet {
     height: auto;
     margin-top: 30px;
     margin-bottom: 200px;
+    padding-top: 0;
   }
 
   img {
@@ -77,8 +87,23 @@
 }
 
 .projects {
+  margin-top: 100px;
+
+  @include mq_mobile {
+    margin-top: 0;
+  }
+
   .section-indicator {
     top: 75px;
+
+    @media screen and (max-width: 1400px) and (min-width: $bp_tablet),
+      screen and (max-width: $bp_mobile) {
+      top: -35px;
+    }
+
+    @include mq_tablet {
+      top: -15px;
+    }
   }
   ul {
     li {
@@ -88,12 +113,19 @@
       position: relative;
 
       @include mq_tablet {
-        padding-bottom: 40px;
-        margin-bottom: 40px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 0;
       }
 
-      &:not(:last-child) {
-        border-bottom: 1px solid $c_main;
+      .line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: white;
+        pointer-events: none;
       }
 
       a {
@@ -150,6 +182,10 @@
 
           &.black {
             opacity: 0;
+
+            @include mq_tablet {
+              display: none;
+            }
           }
         }
 
@@ -185,30 +221,32 @@
       }
 
       &:hover {
-        &:not([disabled]) {
-          &:after {
-            transform: translateY(0%);
-            transition: transform 400ms $cubic_bezier;
-          }
-
-          a {
-            .project-title {
-              transition: transform 400ms $cubic_bezier, color 400ms linear;
-              transform: translateX(40px);
-            }
-            p {
-              transition: color 400ms linear;
-              color: $c_sub;
+        @media screen and (min-width: $bp_tablet) {
+          &:not([disabled]) {
+            &:after {
+              transform: translateY(0%);
+              transition: transform 400ms $cubic_bezier;
             }
 
-            img {
-              transform: translateX(-40px);
-              color: $c_sub;
-              transition: transform 400ms $cubic_bezier, opacity 400ms linear;
-              opacity: 0;
+            a {
+              .project-title {
+                transition: transform 400ms $cubic_bezier, color 400ms linear;
+                transform: translateX(40px);
+              }
+              p {
+                transition: color 400ms linear;
+                color: $c_sub;
+              }
 
-              &.black {
-                opacity: 1;
+              img {
+                transform: translateX(-40px);
+                color: $c_sub;
+                transition: transform 400ms $cubic_bezier, opacity 400ms linear;
+                opacity: 0;
+
+                &.black {
+                  opacity: 1;
+                }
               }
             }
           }
@@ -236,6 +274,37 @@
   }
 
   .title {
+    perspective: 600px;
+    > span {
+      display: block;
+      transform: translateY(100%) rotateX(-80deg);
+      transform-origin: center top;
+      transform-style: preserve-3d;
+      transition: opacity 0s cubic-bezier(0.215, 0.61, 0.355, 1),
+        transform 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+      opacity: 0;
+
+      span {
+        display: inline-block;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 50ms;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 100ms;
+      }
+    }
+
+    &.is-ready {
+      > span {
+        opacity: 1;
+        transform: none;
+        transition-duration: 0.8s;
+      }
+    }
+
     img {
       height: 45px;
       position: relative;
@@ -256,11 +325,23 @@
   &__infos {
     display: flex;
     padding-top: 36px;
-    border-top: 1px solid $c_main;
     justify-content: space-between;
     width: 800px;
     position: relative;
     top: 10px;
+
+    .line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: $c_main;
+
+      @include mq_tablet {
+        display: none;
+      }
+    }
 
     @include mq_desktop {
       flex: 1;
