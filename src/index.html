@@ -5,18 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Parcel Boilerplate</title>
-
-    <!-- Example using CSS -->
-    <!-- <link rel="stylesheet" href="./css/style.css"> -->
-    <!-- Example using SASS -->
-    <!-- <link rel="stylesheet" href="./css/style.sass"> -->
-    <!-- Example using SCSS -->
-    <link rel="stylesheet" href="./css/style.scss" />
+    <title>Alec Teihotaata - Creative Developer</title>
+    <link rel="stylesheet" href="./scss/main.scss" />
   </head>
   <body>
-    <h1 class="fromsass">Parcel Boilerplate</h1>
+	<canvas id="noise"></canvas>
+    <header class="wrapper">
+      <img src="./images/logo.png" alt="logo">
+      <span class="text text--small time"></span>
+    </header>
 
-    <script src="./index.js"></script>
+    <main class="wrapper" data-scroll-container>
+      <section class="landing" data-scroll-section>
+        <div class="section-indicator">
+          <span class="text text--small text--alt">introduction</span>
+          <span class="line"></span>
+        </div>
+
+        <h1 class="title">
+			<span><span>Hey, I’m Alec. <img src="./images/peace_emoji.png" alt="peace"></span></span>
+        	<span><span>I’m a 23 years old Creative Developer,</span></span>
+			<span><span>Currently working at Agence Thuria.</span></span>
+			<span><span>I’m a master of both designing and crafting</span></span>
+			<span><span>beautiful experiences.</span></span>
+		</h1>
+      </section>
+
+	  <section class="projects" data-scroll data-scroll-section data-scroll-call="works" data-scroll-position="top" data-scroll-delay="1">
+	  	 <div class="section-indicator">
+          <span class="text text--small text--alt">projects</span>
+          <span class="line"></span>
+        </div>
+
+		<ul class="projects-list">
+			<li>
+				<a href="#">
+					<p class="title title--alt project-title">SAVOIE MONT BLANC <span class="text project-number">01</span></p>
+					<p class="text text--big role">back-end</p>
+					<p class="text text--big year">2022</p>
+					<img src="./images/arrow.png" alt="arrow">
+					<img src="./images/arrow-black.png" alt="arrow" class="black">
+				</a>
+				<span class="line"></span>
+			</li>
+			<li>
+				<a href="#">
+					<p class="title title--alt project-title">ALISSON <span class="text project-number">02</span></p>
+					<p class="text text--big role">design / dev</p>
+					<p class="text text--big year">2022</p>
+					<img src="./images/arrow.png" alt="arrow">
+					<img src="./images/arrow-black.png" alt="arrow" class="black">
+				</a>
+				<span class="line"></span>
+			</li>
+			<li disabled>
+				<a href="#" disabled>
+					<p class="title title--alt project-title">BEN SCHISSELÉ <span class="text project-number">03</span></p>
+					<p class="text text--big role">development</p>
+					<p class="text text--big year">2020</p>
+					<span class="text text--big coming-soon">(coming soon)</span>
+				</a>
+				<span class="line"></span>
+			</li>
+			<li disabled>
+				<a href="#" disabled>
+					<p class="title title--alt project-title">OG.COMMUNICATION <span class="text project-number">04</span></p>
+					<p class="text text--big role">design / dev</p>
+					<p class="text text--big year">2022</p>
+					<span class="text text--big coming-soon">(coming soon)</span>
+				</a>
+			</li>
+		</ul>
+	  </section>
+
+	  <section class="contact" data-scroll data-scroll-section data-scroll-call="contact" data-scroll-position="top">
+		<div class="section-indicator">
+          <span class="text text--small text--alt">contact</span>
+          <span class="line"></span>
+        </div>
+
+		<h3 class="title">
+			<span><span>Wanna meet up ?</span></span>
+			<span><span>We can talk about anything.</span></span>
+			<span><span>What’s poppin’.<img src="./images/hangten_emoji.png" alt="logo"></span></span>
+		</h3>
+		<ul class="contact__infos">
+			<span class="line"></span>
+			<li class="text">
+				Located in Strasbourg,<br>
+				France
+			</li>
+			<li class="text">
+				<a href="tel:0782149327">+33 7 82 14 93 27</a>
+			</li>
+			<li class="text">
+				<a href="mailto:teihotaata.alec@gmail.com">teihotaata.alec@gmail.com</a>
+			</li>
+		</ul>
+	  </section>
+
+	  	<footer data-scroll-section>
+      		<span class="text">© 2022</span>
+    	</footer>
+    </main>
+
+    <script src="./main.js"></script>
   </body>
 </html>

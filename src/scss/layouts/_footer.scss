@@ -1,0 +1,13 @@
+footer {
+  padding-top: 125px;
+  padding-bottom: 60px;
+
+  @include mq_mobile {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+
+  .text {
+    opacity: 0.1;
+  }
+}

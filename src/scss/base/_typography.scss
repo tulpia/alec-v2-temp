@@ -1,0 +1,54 @@
+.title {
+  @include ft_heading();
+
+  &--alt {
+    font-family: $f_sub;
+  }
+}
+
+.text {
+  @include ft_txt();
+
+  &--big {
+    font-size: 30px;
+    line-height: 36px;
+
+    @include mq_desktop {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    @include mq_desktop_sm {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @include mq_tablet {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+
+  &--small {
+    font-size: 16px;
+    line-height: 20px;
+
+    @include mq_desktop {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @include mq_tablet {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @include mq_mobile {
+      font-size: 9px;
+    }
+  }
+
+  &--alt {
+    font-family: $f_sub;
+  }
+}

@@ -1,0 +1,110 @@
+body {
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+.wrapper {
+  width: 1600px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1800px) {
+    width: 1500px;
+  }
+
+  @include mq_desktop {
+    width: 1300px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: calc(100vw - 80px);
+  }
+
+  @include mq_tablet {
+    width: calc(100vw - 105px);
+    padding-left: 45px;
+  }
+
+  @include mq_mobile {
+    width: calc(100vw - 60px);
+    padding-left: 0;
+  }
+}
+
+#noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+section {
+  position: relative;
+
+  .section-indicator {
+    position: absolute;
+    top: 20px;
+    left: -90px;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+
+    @media screen and (max-width: 1700px) {
+      left: -50px;
+    }
+
+    @media screen and (max-width: 1400px) and (min-width: $bp_tablet),
+      screen and (max-width: $bp_mobile) {
+      transform: none;
+      left: 0;
+      top: -60px;
+    }
+
+    @include mq_tablet {
+      left: -35px;
+    }
+
+    @include mq_mobile {
+      top: -40px;
+      left: 0;
+    }
+
+    .line {
+      width: 0px;
+      display: block;
+      height: 1px;
+      background-color: $c_main;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      @media screen and (max-width: 1400px) and (min-width: $bp_tablet),
+        screen and (max-width: $bp_mobile) {
+        right: auto;
+        left: 0;
+        top: 8px;
+      }
+    }
+
+    .text {
+      display: block;
+      text-transform: uppercase;
+      position: absolute;
+      right: 70px;
+      top: -9px;
+      opacity: 0;
+
+      @media screen and (max-width: 1400px) and (min-width: $bp_tablet),
+        screen and (max-width: $bp_mobile) {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-left: 60px;
+      }
+    }
+  }
+}
